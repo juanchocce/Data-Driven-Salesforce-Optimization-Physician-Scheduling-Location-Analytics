@@ -2,6 +2,14 @@
 
 This repository hosts the end-to-end deployment of a Commercial Intelligence solution designed for the pharmaceutical and specialized healthcare sector. The platform automates data extraction, processes entity resolution across institutional catalogs, and models a business intelligence layer in Power BI to optimize salesforce routing and territory alignment.
 
+<img width="1366" height="768" alt="1" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%201.png" />
+<img width="1366" height="768" alt="1" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%202.png" />
+<img width="1366" height="768" alt="1" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%203.png" />
+<img width="1366" height="768" alt="1" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%204.png" />
+
+
+
+
 ## 📊 Project Interface Overview
 The platform architecture is divided into specialized modules focusing on Market Share, Tactical Route Planning, Multi-Site Practitioner Interoperability, and Geographic Infrastructure.
 
