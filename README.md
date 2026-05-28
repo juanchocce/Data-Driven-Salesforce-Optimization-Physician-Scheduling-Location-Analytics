@@ -1,46 +1,75 @@
-# 🏥 Optimización de Fuerza de Ventas: Analítica de Ubicación y Agendamiento Médico
+# 🏥 Data-Driven Salesforce Optimization: Analítica de Ubicación e Inteligencia de Agendamiento Médico End-to-End
 
-Este repositorio contiene el despliegue de extremo a extremo (End-to-End) de una solución de Inteligencia Comercial diseñada específicamente para el sector farmacéutico y de salud especializada. La plataforma automatiza la extracción de datos, resuelve la consistencia de entidades entre catálogos institucionales y modela una capa de analítica avanzada en Power BI para optimizar las rutas de la fuerza de ventas (SFE) y el alineamiento de territorios estratégicos.
+Este repositorio contiene el despliegue de extremo a extremo de una solución de **Inteligencia Comercial (BI) y Localización Avanzada** diseñada específicamente para optimizar la Efectividad de la Fuerza de Ventas (SFE) en el sector farmacéutico de alta especialización. La plataforma automatiza la ingesta de datos a través de motores de scraping, resuelve la consistencia de entidades distribuidas y estructura una capa semántica en Power BI basada en un modelo en estrella.
+
+---
+
+## 🎯 El Problema de Negocio y la Solución
+
+### El Desafío Comercial 📉
+Las operaciones comerciales en la industria farmacéutica y de dispositivos médicos invierten un alto porcentaje de su presupuesto en el despliegue de visitadores médicos en campo. Sin embargo, sufren de una **alta tasa de rebote e ineficiencia en las rutas** debido a un problema crítico: *las auditorías tradicionales indican dónde se vende el producto (Brick/Zona), pero no cuándo ni en qué establecimiento específico se encuentra físicamente el médico prescriptor.*
+
+### La Solución Implementada 💡
+Este proyecto construye un **Proxy de Mercado Abierto** de alta resolución que modela los patrones de asistencia y la carga horaria real de los profesionales de la salud (HCP) en el Perú. Al determinar dinámicamente las horas que un especialista dedica a la consulta ambulatoria frente al centro quirúrgico, el sistema permite a la gerencia de territorio interceptar al target médico con precisión quirúrgica, **optimizando la efectividad de las rutas de campo en hasta un 35%**.
+
+---
+
+## 📊 Arquitectura e Interfaz de la Plataforma
+
+La solución visual y analítica está segmentada estratégicamente en cuatro paneles de control que responden a necesidades tácticas y ejecutivas concretas:
 
 <img width="1366" height="768" alt="Performance de Cobertura y Target de Mercado" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%201.png" />
 <img width="1366" height="768" alt="Análisis de Médicos Multisede" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%202.png" />
 <img width="1366" height="768" alt="Análisis Geográfico de Mercado e Infraestructura de Salud" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%203.png" />
 <img width="1366" height="768" alt="Planificador Táctico e Intercepción de Fuerza de Ventas" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%204.png" />
 
-## 📊 Vista General de la Interfaz de la Plataforma
-La arquitectura de la solución está dividida en módulos especializados enfocados en la participación de mercado, la planificación táctica de rutas, la interoperabilidad de profesionales multisede y la infraestructura geográfica de salud.
-
-*Referencias de archivos visuales del proyecto:*
-* **Capa de Rendimiento y Target de Mercado:** `proyecto 1.png`
-* **Análisis de Médicos Multisede:** `proyecto 2.png`
-* **Atlas de Infraestructura Geospatial / Mapas:** `proyecto 3.png`
-* **Planificador Táctico e Itinerarios de SFE:** `proyecto 4.png`
+### Módulos de Control Desplegados:
+*   **Pestaña 1: Performance de Cobertura y Target de Mercado (`proyecto 1.png`)** -> Panel ejecutivo enfocado en auditar la distribución de la oferta de horas médicas globales cruzadas por los niveles de categorización del negocio.
+*   **Pestaña 2: Planificador Táctico e Intercepción (`proyecto 4.png`)** -> Agenda operativa micro-territorial que despliega los datos exactos de contacto, establecimiento y horarios activos de los profesionales médicos.
+*   **Pestaña 3: Análisis de Médicos Multisede (`proyecto 2.png`)** -> Matriz de interoperabilidad orientada al perfilado de Key Opinion Leaders (KOLs) según sus nodos de influencia.
+*   **Pestaña 4: Atlas Geográfico de Infraestructura (`proyecto 3.png`)** -> Capa geoespacial interactiva basada en coordenadas precisas y clusterización de la capacidad instalada física del país.
 
 ---
 
-## 🎯 Definición del Problema de Negocio e Impacto
-Las operaciones comerciales de la industria farmacéutica invierten miles de dólares anualmente intentando optimizar las métricas de sus visitadores médicos sin contar con una sincronización en tiempo real de los turnos y horarios de los profesionales de la salud. Como resultado, las auditorías de campo suelen sufrir altas tasas de rebote e ineficiencia debido a la falta de coincidencia entre la visita programada y la presencia real del médico.
+## 🔌 Origen y Pipelines de Datos (Data Ingestion)
 
-**Impacto de la Solución:** Este proyecto construye un *proxy* de mercado abierto que modela con precisión cuándo y dónde se encuentran físicamente los especialistas médicos de alto valor (HCP). Esto permite determinar su nivel de exposición quirúrgica frente a la clínica, optimizando el rendimiento y la efectividad de las rutas de la fuerza de ventas en hasta un 35%.
+Un pilar clave de este proyecto es su capacidad para orquestar de manera limpia e híbrida múltiples orígenes de datos públicos y sectoriales:
 
----
-
-## 🏗️ Arquitectura de Datos y Diseño de Modelo en Estrella
-Para garantizar un rendimiento óptimo en el cálculo de las medidas analíticas sobre millones de registros, el conjunto de datos operativos se estructuró bajo un **Modelo en Estrella (Star Schema)**:
-
-* **Tabla de Hechos (Fact Table):** `Fact_Horarios_Medicos` (Almacena las métricas extraídas mediante scraping relacionadas con bloques horarios exactos, nodos de ubicación, servicios de UPSS y especialidades médicas específicas).
-* **Tablas de Dimensiones (Dimension Tables):**
-  * `Dim_Medico`: Directorio maestro que mapea el Colegio Médico del Perú (CMP) con la nomenclatura estandarizada del profesional.
-  * `Dim_Establecimiento`: Catálogo maestro que indexa el Registro Nacional de Establecimientos de Salud (RENIPRESS/RENAES), incluyendo coordenadas de geocodificación, categorías oficiales (I-1, II-E, III-2, etc.) y capacidades de infraestructura.
-  * `Dim_Calendario`: Dimensión de eje temporal para cálculos de inteligencia de tiempo.
-  * `Dim_Fact_&_Esta` (**Capa de Resolución de Entidades**): Tabla intermedia diseñada para resolver las discrepancias y variaciones de texto entre las cadenas extraídas por el scraper y los códigos oficiales del gobierno (`codigo_renaes`).
+*   **SUSALUD (Programación Asistencial):** Extracción automatizada y estructurada mediante técnicas de web scraping de la plataforma oficial de consulta horaria de [TuA SUSALUD](https://tua.susalud.gob.pe:8084/consulta). Captura variables dinámicas como: médico responsable, fecha de turno, franja horaria exacta, servicio (UPSS) y actividad.
+  
+*   **Plataforma Nacional de Datos Abiertos (MINSA):** Ingesta de los padrones maestros de infraestructura del estado desde la plataforma [Datos Abiertos Perú](https://www.datosabiertos.gob.pe/), obteniendo el catálogo oficial del Registro Nacional de Establecimientos de Salud (**RENIPRESS / RENAES**), coordenadas geográficas (Latitud/Longitud), categorías resolutivas e información institucional.
+  
+*   **Colegio Médico del Perú (CMP):** Extracción de los metadatos de validación profesional y estado habilitante directo desde el portal oficial [Conoce a tu Médico - CMP](https://conoceatumedico.cmp.org.pe/), asegurando la calidad y vigencia del maestro de profesionales.
 
 ---
 
-## 💡 Capa Semántica Avanzada en DAX (Muestra de la Arquitectura)
+## 🏗️ Modelamiento de Datos e Ingeniería de Características
 
-### 1. Filtrado de Cobertura de Bloques Horarios en Tiempo Real (Patrón de Dimensión Desconectada)
-Para evaluar la disponibilidad de los médicos a una hora específica sin saturar la granularidad de la tabla de hechos, se implementó una dimensión de horas desconectada mediante un filtro de índice de intercepción:
+Para mitigar el desorden inherente de la data extraída de la web, se diseñó e implementó un **Modelo de Datos en Estrella (Star Schema)** altamente optimizado para consultas analíticas pesadas:
+
+---
+```
+              +-----------------------+
+              |    Dim_Calendario     |
+              +-----------+-----------+
+                          | 1
+                          | *
++--------------------+    +---+-------------------+    +---------------------------+
+|     Dim_Medico     +----+ Fact_Horarios_Medicos +----+    Dim_Establecimiento     |
++--------------------+ 1  * +---------------------+ * 1+---------------------------+
+(Mapeado vía Código RENAES)
+```
+---
+
+*   **Capa de Resolución de Entidades (`Dim_Fact_&_Esta`):** Se desarrolló una tabla intermedia de emparejamiento de cadenas de texto (String-Matching) para corregir y homologar las discrepancias entre los nombres libres de las clínicas del scraping y los IDs numéricos del código maestro RENAES, eliminando duplicados y garantizando la integridad referencial.
+*   **Dimensión Desconectada Temporal:** Implementación de un patrón avanzado para inyectar franjas horarias como parámetros de control dinámicos independientes en la interfaz del usuario.
+
+---
+
+## 💡 Capa Semántica Avanzada (Muestra de Lógica DAX)
+
+### 1. Filtro Algorítmico de Cobertura de Horarios en Tiempo Real
+Esta métrica evalúa sintácticamente las cadenas de caracteres de texto asociadas a los turnos ("14:30 - 20:00") y las contrasta en tiempo real con la hora seleccionada por el usuario en la interfaz, sin comprometer el rendimiento de almacenamiento de la tabla de hechos:
 
 ```dax
 Filtro_Hora_Intercepcion = 
@@ -60,7 +89,7 @@ RETURN
     )
 ```
 
----
+
 
 ## 2. Rastreador de Influencia de Médicos Multisede
 
