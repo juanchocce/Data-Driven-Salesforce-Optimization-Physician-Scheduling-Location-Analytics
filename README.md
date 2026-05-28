@@ -25,9 +25,9 @@ La solución visual y analítica está segmentada estratégicamente en cuatro pa
 
 ### Módulos de Control Desplegados:
 *   **Pestaña 1: Performance de Cobertura y Target de Mercado (`proyecto 1.png`)** -> Panel ejecutivo enfocado en auditar la distribución de la oferta de horas médicas globales cruzadas por los niveles de categorización del negocio.
-*   **Pestaña 2: Planificador Táctico e Intercepción (`proyecto 4.png`)** -> Agenda operativa micro-territorial que despliega los datos exactos de contacto, establecimiento y horarios activos de los profesionales médicos.
-*   **Pestaña 3: Análisis de Médicos Multisede (`proyecto 2.png`)** -> Matriz de interoperabilidad orientada al perfilado de Key Opinion Leaders (KOLs) según sus nodos de influencia.
-*   **Pestaña 4: Atlas Geográfico de Infraestructura (`proyecto 3.png`)** -> Capa geoespacial interactiva basada en coordenadas precisas y clusterización de la capacidad instalada física del país.
+*   **Pestaña 2: Planificador Táctico e Intercepción (`proyecto 2.png`)** -> Agenda operativa micro-territorial que despliega los datos exactos de contacto, establecimiento y horarios activos de los profesionales médicos.
+*   **Pestaña 3: Análisis de Médicos Multisede (`proyecto 3.png`)** -> Matriz de interoperabilidad orientada al perfilado de Key Opinion Leaders (KOLs) según sus nodos de influencia.
+*   **Pestaña 4: Atlas Geográfico de Infraestructura (`proyecto 4.png`)** -> Capa geoespacial interactiva basada en coordenadas precisas y clusterización de la capacidad instalada física del país.
 
 ---
 
