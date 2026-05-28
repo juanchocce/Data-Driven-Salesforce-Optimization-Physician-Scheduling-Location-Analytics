@@ -23,6 +23,7 @@ La solución visual y analítica está segmentada estratégicamente en cuatro pa
 <img width="1366" height="768" alt="Análisis Geográfico de Mercado e Infraestructura de Salud" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%203.png" />
 <img width="1366" height="768" alt="Planificador Táctico e Intercepción de Fuerza de Ventas" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%204.png" />
 
+
 ### Módulos de Control Desplegados:
 *   **Pestaña 1: Performance de Cobertura y Target de Mercado (`proyecto 1.png`)** -> Panel ejecutivo enfocado en auditar la distribución de la oferta de horas médicas globales cruzadas por los niveles de categorización del negocio.
 *   **Pestaña 2: Planificador Táctico e Intercepción (`proyecto 2.png`)** -> Agenda operativa micro-territorial que despliega los datos exactos de contacto, establecimiento y horarios activos de los profesionales médicos.
@@ -110,6 +111,8 @@ AVERAGEX(
 Aunque el pipeline de código abierto funciona con solidez al perfilar la capacidad instalada de los establecimientos (Dim_Establecimiento) y las métricas de concentración de horarios, está arquitectado para una inmediata escalabilidad a nivel corporativo (Enterprise).
 
 Al cruzar esta estructura de datos con paneles de auditoría premium (como IQVIA DDD o perfiles de prescriptores de Close-Up), el liderazgo comercial de un laboratorio puede ejecutar proyecciones de ventas predictivas, mapear tendencias de participación de mercado a nivel microterritorial y asignar cuotas de ventas corporativas de precisión quirúrgica, descendiendo incluso a nivel de bloques horarios médicos específicos.
+
+---
 
 ## 🛠️ Ciclo de Despliegue y Prerrequisitos
 
