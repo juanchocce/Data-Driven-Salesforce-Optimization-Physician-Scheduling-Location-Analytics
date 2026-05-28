@@ -1,0 +1,2 @@
+# Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics
+This repository hosts the end-to-end deployment of a Commercial Intelligence solution designed for the pharmaceutical and specialized healthcare sector. The platform automates data extraction, processes entity resolution across institutional catalogs, and models a business intelligence layer in Power BI to optimize salesforce routing and territory.
