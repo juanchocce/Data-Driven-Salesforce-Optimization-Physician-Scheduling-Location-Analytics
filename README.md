@@ -1,49 +1,46 @@
-# 🏥 Data-Driven Salesforce Optimization: Physician Scheduling & Location Analytics
+# 🏥 Optimización de Fuerza de Ventas: Analítica de Ubicación y Agendamiento Médico
 
-This repository hosts the end-to-end deployment of a Commercial Intelligence solution designed for the pharmaceutical and specialized healthcare sector. The platform automates data extraction, processes entity resolution across institutional catalogs, and models a business intelligence layer in Power BI to optimize salesforce routing and territory alignment.
+Este repositorio contiene el despliegue de extremo a extremo (End-to-End) de una solución de Inteligencia Comercial diseñada específicamente para el sector farmacéutico y de salud especializada. La plataforma automatiza la extracción de datos, resuelve la consistencia de entidades entre catálogos institucionales y modela una capa de analítica avanzada en Power BI para optimizar las rutas de la fuerza de ventas (SFE) y el alineamiento de territorios estratégicos.
 
-<img width="1366" height="768" alt="1" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%201.png" />
-<img width="1366" height="768" alt="1" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%202.png" />
-<img width="1366" height="768" alt="1" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%203.png" />
-<img width="1366" height="768" alt="1" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%204.png" />
+<img width="1366" height="768" alt="Performance de Cobertura y Target de Mercado" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%201.png" />
+<img width="1366" height="768" alt="Análisis de Médicos Multisede" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%202.png" />
+<img width="1366" height="768" alt="Análisis Geográfico de Mercado e Infraestructura de Salud" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%203.png" />
+<img width="1366" height="768" alt="Planificador Táctico e Intercepción de Fuerza de Ventas" src="https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics/blob/main/proyecto%204.png" />
 
+## 📊 Vista General de la Interfaz de la Plataforma
+La arquitectura de la solución está dividida en módulos especializados enfocados en la participación de mercado, la planificación táctica de rutas, la interoperabilidad de profesionales multisede y la infraestructura geográfica de salud.
 
-
-
-## 📊 Project Interface Overview
-The platform architecture is divided into specialized modules focusing on Market Share, Tactical Route Planning, Multi-Site Practitioner Interoperability, and Geographic Infrastructure.
-
-*File references for visual architecture confirmation:*
-* **Market Performance Layer:** `image 1`
-* **Tactical SFE Itinerary Planner:** `image 2`
-* **Multi-Site Influence Analytics:** `iamge 3`
-* **Geospatial Infrastructure Atlas:** `image 4`
+*Referencias de archivos visuales del proyecto:*
+* **Capa de Rendimiento y Target de Mercado:** `proyecto 1.png`
+* **Análisis de Médicos Multisede:** `proyecto 2.png`
+* **Atlas de Infraestructura Geospatial / Mapas:** `proyecto 3.png`
+* **Planificador Táctico e Itinerarios de SFE:** `proyecto 4.png`
 
 ---
 
-## 🎯 Business Problem Statement & Impact
-Pharma commercial operations spend thousands of dollars annually attempting to optimize field representative metrics without real-time synchronization of medical shifts. Field metrics usually suffer from high bounce rates due to mismatched doctor visit scheduling.
+## 🎯 Definición del Problema de Negocio e Impacto
+Las operaciones comerciales de la industria farmacéutica invierten miles de dólares anualmente intentando optimizar las métricas de sus visitadores médicos sin contar con una sincronización en tiempo real de los turnos y horarios de los profesionales de la salud. Como resultado, las auditorías de campo suelen sufrir altas tasas de rebote e ineficiencia debido a la falta de coincidencia entre la visita programada y la presencia real del médico.
 
-**Solution Impact:** This project builds an open market proxy that models precisely when and where high-value medical specialists are physically located, determining their surgical vs. clinical exposure and optimizing route performance by up to 35%.
-
----
-
-## 🏗️ Data Architecture & Star Schema Design
-To guarantee optimal calculation performance across millions of data rows, the operational dataset was broken down into a structured **Star Schema Layout**:
-
-* **Fact Table:** `Fact_Horarios_Medicos` (Stores scraped metrics regarding exact time frames, location nodes, UPSS services, and specific specialties).
-* **Dimension Tables:**
-  * `Dim_Medico`: Master directory mapping Unique Medical Registry (CMP) with standardized nomenclature.
-  * `Dim_Establecimiento`: Master directory indexing the official National Register of Health Establishments (RENIPRESS/RENAES), containing geocoding data, category status, and bed capacities.
-  * `Dim_Calendario`: Time intelligence index dimension.
-  * `Dim_Fact_&_Esta`: **Entity Resolution Layer**. Intermediate table created to solve the string-matching discrepancies between dynamic scraped text layouts and standardized government index numbers (`codigo_renaes`).
+**Impacto de la Solución:** Este proyecto construye un *proxy* de mercado abierto que modela con precisión cuándo y dónde se encuentran físicamente los especialistas médicos de alto valor (HCP). Esto permite determinar su nivel de exposición quirúrgica frente a la clínica, optimizando el rendimiento y la efectividad de las rutas de la fuerza de ventas en hasta un 35%.
 
 ---
 
-## 💡 Advanced DAX Semantic Layer (Sample Architecture)
+## 🏗️ Arquitectura de Datos y Diseño de Modelo en Estrella
+Para garantizar un rendimiento óptimo en el cálculo de las medidas analíticas sobre millones de registros, el conjunto de datos operativos se estructuró bajo un **Modelo en Estrella (Star Schema)**:
 
-### 1. Real-Time Time-Slot Coverage Filtering (Disconnected Dimension Pattern)
-To evaluate doctor availability at a specific hour without bloating the factual granularity, a disconnected hour dimension was implemented via an interception index filter:
+* **Tabla de Hechos (Fact Table):** `Fact_Horarios_Medicos` (Almacena las métricas extraídas mediante scraping relacionadas con bloques horarios exactos, nodos de ubicación, servicios de UPSS y especialidades médicas específicas).
+* **Tablas de Dimensiones (Dimension Tables):**
+  * `Dim_Medico`: Directorio maestro que mapea el Colegio Médico del Perú (CMP) con la nomenclatura estandarizada del profesional.
+  * `Dim_Establecimiento`: Catálogo maestro que indexa el Registro Nacional de Establecimientos de Salud (RENIPRESS/RENAES), incluyendo coordenadas de geocodificación, categorías oficiales (I-1, II-E, III-2, etc.) y capacidades de infraestructura.
+  * `Dim_Calendario`: Dimensión de eje temporal para cálculos de inteligencia de tiempo.
+  * `Dim_Fact_&_Esta` (**Capa de Resolución de Entidades**): Tabla intermedia diseñada para resolver las discrepancias y variaciones de texto entre las cadenas extraídas por el scraper y los códigos oficiales del gobierno (`codigo_renaes`).
+
+---
+
+## 💡 Capa Semántica Avanzada en DAX (Muestra de la Arquitectura)
+
+### 1. Filtrado de Cobertura de Bloques Horarios en Tiempo Real (Patrón de Dimensión Desconectada)
+Para evaluar la disponibilidad de los médicos a una hora específica sin saturar la granularidad de la tabla de hechos, se implementó una dimensión de horas desconectada mediante un filtro de índice de intercepción:
 
 ```dax
 Filtro_Hora_Intercepcion = 
@@ -63,12 +60,11 @@ RETURN
     )
 ```
 
-
 ---
 
-## 2. Multi-Site Physician Influence Tracker
+## 2. Rastreador de Influencia de Médicos Multisede
 
-Determines practitioners distributing clinical influence over competitive corporate medical clusters:
+Determina la distribución del potencial comercial y de prescripción de los profesionales médicos a través de múltiples clústeres de salud competitivos:
 
 ```DAX
 Promedio_Establecimientos_Por_Medico = 
@@ -81,33 +77,32 @@ AVERAGEX(
 
 ---
 
-## 🚀 Scalability Framework: The Commercial Integration Link
+## 🚀 Marco de Escalabilidad: El Vínculo de Integración Comercial
+Aunque el pipeline de código abierto funciona con solidez al perfilar la capacidad instalada de los establecimientos (Dim_Establecimiento) y las métricas de concentración de horarios, está arquitectado para una inmediata escalabilidad a nivel corporativo (Enterprise).
 
-While the open-source pipeline stands strong by profiling institutional infrastructure capacity (`Dim_Establecimiento[CAMAS]`) and schedule concentration metrics, it is architected for immediate Enterprise Scalability.
+Al cruzar esta estructura de datos con paneles de auditoría premium (como IQVIA DDD o perfiles de prescriptores de Close-Up), el liderazgo comercial de un laboratorio puede ejecutar proyecciones de ventas predictivas, mapear tendencias de participación de mercado a nivel microterritorial y asignar cuotas de ventas corporativas de precisión quirúrgica, descendiendo incluso a nivel de bloques horarios médicos específicos.
 
-By merging this data footprint with premium target panels (such as IQVIA DDD Audits or Close-Up Prescriber Profiles), corporate leadership can execute predictive sales projections, map micro-territorial Market Share trends, and assign precision corporate sales quotas down to individual medical time blocks.
+## 🛠️ Ciclo de Despliegue y Prerrequisitos
 
-## 🛠️ Deployment Lifecycle & Prerequisites
-
-**1. Clone Repository Hierarchy:**
+1. Clonar la jerarquía del repositorio:
 ```bash
-git clone [https://github.com/juanchocce/Medical-Salesforce-Optimization-Web-Scraping-and-Analytics.git](https://github.com/juanchocce/Medical-Salesforce-Optimization-Web-Scraping-and-Analytics.git)
+git clone https://github.com/juanchocce/Data-Driven-Salesforce-Optimization-Physician-Scheduling-Location-Analytics.git
 ```
 ---
 
-### 🛠️ Deployment Lifecycle & Prerequisites
 
-**Install Isolation Dependencies:**
+2. Instalar dependencias en un entorno aislado:
 ```bash
 pip install -r requirements.txt
 ```
-
-### 🛠️ Database Population
-Run the primary selenium orchestrator to trigger structural extraction, mapping inputs directly into your localized relational store or analytical engine.
+---
+3. Población de la Base de Datos:
+   
+Ejecuta el orquestador principal basado en Selenium para activar la extracción estructural de datos. El script mapeará las entradas directamente en tu almacenamiento relacional local o motor analítico.
 
 ---
 
-### 👤 Analytical Ownership
+### 👤 Autoría y Liderazgo Analítico
 **Juan Chocce** - Lead Business Intelligence & Systems Engineer
 
 [LinkedIn](https://www.linkedin.com/in/juanchocce/) 🔗
